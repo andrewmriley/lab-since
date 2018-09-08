@@ -1,5 +1,3 @@
-
-
 const getDateTime = (date, time) => {
   if (date === null) {
     date = '1970-01-01';
@@ -12,7 +10,7 @@ const getDateTime = (date, time) => {
 
 const getDisplay = d => {
   if (d === null) {
-    return 7;
+    return 15;
   }
   return d;
 }
