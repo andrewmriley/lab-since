@@ -1,17 +1,6 @@
-const getDateTime = (date, time) => {
-  if (date === null) {
-    date = '1970-01-01';
-  }
-  if (time === null) {
-    time = '12:00:00';
-  }
-  return new Date(date + 'T' + time);
-}
+const getDateTime = (date = "1970-01-01", time = "12:00:00") => new Date(date + 'T' + time);
 
-const getDisplay = d => {
-  if (d === null) {
-    return 15;
-  }
+const getDisplay = (d = 15) => {
   return d;
 }
 
