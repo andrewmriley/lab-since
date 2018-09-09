@@ -16,10 +16,11 @@
     "eslint": "^5.4.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "worker-loader": "^2.0.0"
   },
   "sideEffects": false,
   "devDependencies": {
-    "eslint-config-google": "^0.9.1"
+    "eslint-config-google": "^0.9.1",
+    "webpack-dev-server": "^3.1.5"
   }
 }

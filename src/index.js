@@ -1,17 +1,9 @@
 import {getArgs} from './address.js';
-import {calcSince} from './date/calc.js';
-import {displaySince} from './date/display.js';
+import Worker from 'worker-loader!./worker.js';
 
-const component = output => {
-  let element = document.createElement('div');
+const args = getArgs();
+const output = document.getElementById('output');
 
-  element.innerHTML = output;
-
-  return element;
-}
-
-const {display, dateTime} = getArgs();
-calcSince(display, dateTime)
-const output = displaySince(display);
-
-document.body.appendChild(component(output));
+const worker = new Worker();
+worker.postMessage(args);
+worker.onmessage = event => output.innerHTML = event.data; 
