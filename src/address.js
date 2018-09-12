@@ -1,13 +1,23 @@
-const getDateTime = (date = "1970-01-01", time = "12:00:00") => new Date(date + 'T' + time);
+import {post} from './display.js';
 
-const getDisplay = (d = 15) => {
-  return d;
-}
+const getDateTime = (dt = "1970-01-01T:12:00:00.000Z") => new Date(dt);
+
+const getDisplay = (d = 15) => d;
+
+export const setArgs = args => {
+  let url = new URL(window.location);
+  let {dt, d} = args;
+  
+  url.searchParams.set("dt", dt);
+  url.searchParams.set("d", d);
+  history.pushState(null, null, url);
+  post(getArgs());
+};
 
 export const getArgs = () => {
-  let params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
   return {
-    dateTime: getDateTime(params.get("date"), params.get("time")),
+    dateTime: getDateTime(params.get("dt")),
     display: getDisplay(params.get("d"))
   };
 };
