@@ -1,9 +1,5 @@
 import {post} from './display.js';
 
-const getDateTime = (dt = "1970-01-01T:12:00:00.000Z") => new Date(dt);
-
-const getDisplay = (d = 15) => d;
-
 export const setArgs = args => {
   let url = new URL(window.location);
   let {dt, d} = args;
@@ -17,7 +13,11 @@ export const setArgs = args => {
 export const getArgs = () => {
   const params = new URLSearchParams(window.location.search);
   return {
-    dateTime: getDateTime(params.get("dt")),
-    display: getDisplay(params.get("d"))
+    dateTime: new Date(params.get("dt")),
+    display: params.get("d") || 15
   };
 };
+
+window.addEventListener("haschange", () => {
+  console.log('change');
+});
