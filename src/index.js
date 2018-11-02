@@ -5,4 +5,6 @@ import {post} from './display.js';
 const args = getArgs();
 
 post(args);
-initForm(args);
+if (args.hideForm === null || args.hideForm === "0") {
+    initForm(args);
+}

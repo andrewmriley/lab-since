@@ -1,16 +1,41 @@
 import {setArgs} from './address.js';
 import {chunks} from './global.js';
 
-const form = document.getElementById("settings");
-const formToggle = document.getElementById("formtoggle");
-const chunksRegion = document.getElementById("chunks");
-const dateField = document.getElementById("date");
-const timeField = document.getElementById("time");
+let form;
+let formToggle;
+let chunksRegion;
+let dateField;
+let timeField;
 
 export const initForm = ({display, dateTime}) => {
+    createForm();
     createChunks(display);
     mapEvents(dateTime);
 };
+
+const createForm = () => {
+    document.getElementById("settings").innerHTML = 
+    `    <div id="formtoggle">Hide form</div>
+    <form id="settings">
+      <h2>Settings</h2>
+      <div id="display">
+        <h3>Segments to display:</h3>
+        <div id="chunks"></div>
+      </div>
+      <label>Date: 
+        <input type="date" id="date">
+      </label>
+      <label>Time:
+        <input type="time" id="time">
+      </label>
+      <input type="submit" value="Update settings">
+    </form>`;
+    form = document.getElementById("settings");
+    formToggle = document.getElementById("formtoggle");
+    chunksRegion = document.getElementById("chunks");
+    dateField = document.getElementById("date");
+    timeField = document.getElementById("time");
+}
 
 const mapEvents = dateTime => {
     const chunkFields = document.getElementsByName("chunk");
@@ -30,7 +55,8 @@ const mapEvents = dateTime => {
 
         setArgs({
             dt: newDt.toISOString(),
-            d: bit
+            d: bit,
+            hf: 0
         });
     });
 
