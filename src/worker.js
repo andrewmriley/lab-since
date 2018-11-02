@@ -4,7 +4,6 @@ let timeBank = 0;
 let timerStart = true;
 let display;
 let dateTime;
-let timer;
 
 const calc = () => {
     timeBank = (new Date() - dateTime) / 1000;
@@ -19,14 +18,9 @@ const calc = () => {
 };
 
 const displayMessage = () => {
-    const output = [];
-    chunks.forEach(chunk => {
-        if ((display & chunk.bit) && chunk.value > 0) {
-            let message = chunk.value.toString() + " " + chunk.text;
-            message += chunk.value > 1 ? "s": "";
-            output.push(message);
-        }
-    });
+    const output = chunks.map(chunk => 
+        (display & chunk.bit) && chunk.value > 0 ? `${chunk.value.toString()} ${chunk.text}${chunk.value > 1 ? "s" : ""}` : ""
+    );
     return output.length ? output.join(" ").trim() : "Something went wrong. You must use a valid date/time.";
 };
 
@@ -38,7 +32,7 @@ onmessage = event => {
 }
 
 if (timerStart) {
-    timer = setInterval(() => {
+    setInterval(() => {
         calc();
         postMessage(displayMessage());
     }, 500);

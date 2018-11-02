@@ -12,8 +12,9 @@ export const setArgs = args => {
 
 export const getArgs = () => {
   const params = new URLSearchParams(window.location.search);
+  const dt = params.get("dt");
   return {
-    dateTime: new Date(params.get("dt")),
+    dateTime: dt === null ? new Date() : new Date(dt),
     display: params.get("d") || 15
   };
 };
