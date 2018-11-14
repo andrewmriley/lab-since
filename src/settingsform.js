@@ -26,7 +26,7 @@ const createForm = () => {
         <input type="date" id="date">
       </label>
       <label>Time:
-        <input type="time" id="time">
+        <input type="time" id="time" step="1">
       </label>
       <input type="submit" value="Update settings">
     </form>`;
