@@ -16,21 +16,22 @@ export const initForm = ({display, dateTime}) => {
 const createForm = () => {
     document.getElementById("settings").innerHTML = 
     `    <div id="formtoggle">Hide form</div>
-    <form id="settings">
+    <form id="settingsform">
+    <p>Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.</p>
       <h2>Settings</h2>
-      <div id="display">
-        <h3>Segments to display:</h3>
-        <div id="chunks"></div>
-      </div>
       <label>Date: 
         <input type="date" id="date">
       </label>
       <label>Time:
         <input type="time" id="time" step="1">
       </label>
+      <div id="display">
+        <h3>Segments to display:</h3>
+        <div id="chunks"></div>
+      </div>
       <input type="submit" value="Update settings">
     </form>`;
-    form = document.getElementById("settings");
+    form = document.getElementById("settingsform");
     formToggle = document.getElementById("formtoggle");
     chunksRegion = document.getElementById("chunks");
     dateField = document.getElementById("date");
