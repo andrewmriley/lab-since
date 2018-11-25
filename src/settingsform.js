@@ -19,30 +19,12 @@ export const initForm = ({display, dateTime, hideForm}) => {
 };
 
 const createForm = () => {
-    document.getElementById("settings").innerHTML = 
-    `    <div id="formtoggle"></div>
-    <form id="settingsform">
-    <p>Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.</p>
-      <h2>Settings</h2>
-      <label>Date: 
-        <input type="date" id="date">
-      </label>
-      <label>Time:
-        <input type="time" id="time" step="1">
-      </label>
-      <div id="display">
-        <h3>Segments to display:</h3>
-        <div id="chunks"></div>
-      </div>
-      <input type="submit" id="update" value="Update settings">
-    </form>`;
     form = document.getElementById("settingsform");
     formToggle = document.getElementById("formtoggle");
     chunksRegion = document.getElementById("chunks");
     dateField = document.getElementById("date");
     timeField = document.getElementById("time");
-    console.log(hf);
-    if (hf === 1) {
+    if (hf) {
         formToggle.innerHTML = showText;
         form.style.display = "none";
     }
@@ -88,7 +70,7 @@ const updateArgs = () => {
         d: bit,
         hf: hf
     });
-}
+};
 
 const createChunks = display => {
     chunksRegion.innerHTML = chunks.map(chunk => 

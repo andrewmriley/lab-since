@@ -30,7 +30,24 @@
   </head>
   <body>
     <h1 id="output"></h1>
-    <span id="settings"></span>
+    <span id="settings">
+      <div id="formtoggle"></div>
+        <form id="settingsform">
+          <p>Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.</p>
+          <h2>Settings</h2>
+          <label>Date: 
+            <input type="date" id="date">
+          </label>
+          <label>Time:
+            <input type="time" id="time" step="1">
+          </label>
+          <div id="display">
+            <h3>Segments to display:</h3>
+            <div id="chunks"></div>
+          </div>
+          <input type="submit" id="update" value="Update settings">
+        </form>
+    </span>
     <script src="main.js"></script>
   </body>
 </html>
