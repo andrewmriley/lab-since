@@ -15,7 +15,7 @@ export const initForm = ({display, dateTime}) => {
 
 const createForm = () => {
     document.getElementById("settings").innerHTML = 
-    `    <div id="formtoggle">Hide form</div>
+    `    <div id="formtoggle">Hide Form</div>
     <form id="settingsform">
     <p>Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.</p>
       <h2>Settings</h2>
@@ -29,7 +29,7 @@ const createForm = () => {
         <h3>Segments to display:</h3>
         <div id="chunks"></div>
       </div>
-      <input type="submit" value="Update settings">
+      <input type="submit" id="update" value="Update settings">
     </form>`;
     form = document.getElementById("settingsform");
     formToggle = document.getElementById("formtoggle");
