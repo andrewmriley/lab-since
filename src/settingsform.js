@@ -12,7 +12,7 @@ const showText = "Show Form";
 const hideText = "Hide Form";
 
 export const initForm = ({display, dateTime, hideForm}) => {
-    hf = parseInt(hideForm);
+    hf = parseInt(hideForm) || 0;
     createForm();
     createChunks(display);
     mapEvents(dateTime);
