@@ -1,5 +1,5 @@
-import {setArgs} from './address.js';
-import {chunks} from './global.js';
+import {setArgs} from "./address.js";
+import {chunks} from "./global.js";
 
 let form;
 let formToggle;
@@ -31,7 +31,7 @@ const createForm = () => {
     else {
         formToggle.innerHTML = hideText;
     }
-}
+};
 
 const mapEvents = dateTime => {
     dateField.value = dateTime.toISOString().substr(0,10);
@@ -57,7 +57,7 @@ const mapEvents = dateTime => {
 };
 
 const updateArgs = () => {
-    const newDt = new Date(dateField.value + 'T' + timeField.value);
+    const newDt = new Date(dateField.value + "T" + timeField.value);
     let bit = 0;
     chunkFields.forEach(c => {
         if (c.checked) {
@@ -73,10 +73,10 @@ const updateArgs = () => {
 };
 
 const createChunks = display => {
-    chunksRegion.innerHTML = chunks.map(chunk => 
+    chunksRegion.innerHTML = chunks.map(chunk =>
        `<label>${chunk.text}
            <input type="checkbox" name="chunk" value="${chunk.bit}" ${display & chunk.bit ? "checked" : ""}>
        </label>`
-    ).join('<br>');
+    ).join("<br>");
     chunkFields = document.getElementsByName("chunk");
 };

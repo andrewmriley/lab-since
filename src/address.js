@@ -1,4 +1,4 @@
-import {post} from './display.js';
+import {post} from "./display.js";
 
 export const setArgs = ({dt, d, hf}) => {
   let url = new URL(window.location);

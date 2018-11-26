@@ -1,6 +1,6 @@
-import {getArgs} from './address.js';
-import {initForm} from './settingsform.js';
-import {post} from './display.js';
+import {getArgs} from "./address.js";
+import {initForm} from "./settingsform.js";
+import {post} from "./display.js";
 
 const args = getArgs();
 

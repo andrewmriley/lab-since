@@ -2,12 +2,26 @@
 <html>
   <head>
     <title>Time Since</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@andrewmriley">
+    <meta name="og:title" content="Calculate how long it has been since... something.">
+    <meta name="twitter:title" content="Calculate how long it has been since... something.">
+    <meta name="og:url" content="https://labs.developerkarma.com/since/">
+    <meta name="twitter:url" content="https://labs.developerkarma.com/since/">
+    <meta name="description" content="Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.">
+    <meta name="og:description" content="Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.">
+    <meta name="twitter:description" content="Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.">
     <style>
       #output {
         margin: 1em;
         font-weight: bold;
         text-align: center;
+      }
+      #settings {
+        margin-bottom: 1em;
       }
       #formtoggle {
         margin: 3em 0;
@@ -23,17 +37,18 @@
         width: 100%;
       }
       #formtoggle {
-        color: #00E;
-        text-decoration: underline;
+        color: #007bff;
       }
     </style>
   </head>
   <body>
     <h1 id="output"></h1>
     <span id="settings">
-      <div id="formtoggle"></div>
+      <div id="formtoggle" role="button"></div>
         <form id="settingsform">
-          <p>Enter a date to calcuate the time since. Select segments to display that time by. You can then return using the updated address for this page.</p>
+          <p>Enter a date to calcuate the time since. Select segments to
+          display that time by. You can then return using the updated address
+          for this page. <a href="https://github.com/andrewmriley/lab-since">The source is available on Github</a>.</p>
           <h2>Settings</h2>
           <label>Date: 
             <input type="date" id="date">

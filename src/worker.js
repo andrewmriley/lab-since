@@ -1,4 +1,4 @@
-import {chunks} from './global.js';
+import {chunks} from "./global.js";
 
 let timeBank = 0;
 let timerStart = true;
@@ -29,7 +29,7 @@ onmessage = event => {
     dateTime = event.data.dateTime;
     calc();
     postMessage(displayMessage());
-}
+};
 
 if (timerStart) {
     setInterval(() => {
